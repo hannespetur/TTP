@@ -42,6 +42,10 @@ However, which I later realized is that I cannot really apply this statement to 
 
 The code is written and tested on Python 2.7 on Ubundu 14.04 (Trusty Tahr). It should of course run on other platforms as well. No external modules were used.
 
+## Help
+
+	python travelingtp.py --help
+
 ## Example 1
 
 	`python travelingtp.py --visit_airports CPH,LHR,DUB --trip_time 21 --first_flight_date "2015.6.1"`
@@ -62,11 +66,20 @@ Output:
 	KEF --(2015-07-02 for 8998 ISK)--> DUB --(2015-08-04 for 89398 ISK)--> ORD --(2015-08-27 for 71122 ISK)--> PEK --(2015-09-08 for 62293 ISK)--> LHR --(2015-10-13 for 150259 ISK)--> ATL --(2015-11-02 for 18685 ISK)--> LAX --(2015-12-12 for 41976 ISK)--> CPH --(2015-12-26 for 9970 ISK)--> FRA --(2016-01-31 for 35170 ISK)--> KEF
 	Price: 487871 ISK
 
-If we try to much bigger than that we might get problems since we are likely to have no solution. The program takes a lot 
+If we try to much bigger than that we might get problems since we are likely to have no solution.
 
-## Help
+## Possible improvements
 
-	python travelingtp.py --help
+If I had time I'd probably invest it in adding the following features to my code:
+
+* Add an option to choose cities rather than airports to visit and set the price value between airports in the same city as something specified (default 0).
+* Add an option to specify range in kilometers and make all airports in that range have a cost value of something specified (default 0).
+
+The code is written in a way that these features would be fairly simply to add to it. Just instead of starting with empty dicts I could make the dicts have the cost 0 before running the "findFlights" function, e.g.
+
+	d["LHR"]["LGW"][0] = 0
+
+to make the cost of going from Heathrow to Gatwick be 0.
 
 # References
 [1] http://en.wikipedia.org/wiki/Travelling_salesman_problem
