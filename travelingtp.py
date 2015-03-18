@@ -128,12 +128,12 @@ if __name__ == '__main__':
 	parser = argparse.ArgumentParser(description="This program was created as part of the Dohop's Hackathon. The Traveling Tourist Problem (TTP) is a variation of the classic The Traveling Salesman Problem (TSP).")
 
 	## Hint: add_argument(name or flags...[, action][, nargs][, const][, default][, type][, choices][, required][, help][, metavar][, dest])
+	parser.add_argument("visit_airports",help="A comma seperated list of the airports that the user wants to visit.",action="store")
 	parser.add_argument("--verbose","-v",help="Use verbose mode",action="store_true")
 	parser.add_argument("--vverbose","-vv",help="Use very verbose mode",action="store_true")
 	parser.add_argument("--language","-l",default="en",help="The language to get data from the Dohop API.",action="store")
 	parser.add_argument("--user_country","-uc",default="IS",help="The user's country to get data from the Dohop API.",action="store")
 	parser.add_argument("--start_airport","-sa",default="KEF",help="The start (and end) airport the user's will start at.",action="store")
-	parser.add_argument("--visit_airports","-va",default="CPH,LHR,DUB,LAX",help="A comma seperated list of the airports that the user wants to visit.",action="store")
 	parser.add_argument("--min_time","-m",default=1,help="The minimum time per location/airport.")
 	parser.add_argument("--trip_time","-t",default=250,type=int,help="Specify the total trip time.")
 	parser.add_argument("--currency","-c",default="ISK",help="Specify the currency to display flight prices in.")

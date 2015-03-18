@@ -48,7 +48,7 @@ The code is written and tested on Python 2.7 on Ubundu 14.04 (Trusty Tahr). It s
 
 ## Example 1
 
-	`python travelingtp.py --visit_airports CPH,LHR,DUB --trip_time 21 --first_flight_date "2015.6.1"`
+	`python travelingtp.py CPH,LHR,DUB --trip_time 21 --first_flight_date "2015.6.1"`
 
 Output:
 
@@ -59,7 +59,7 @@ Meaning of the output: The cheapest route is going from Keflavík to Dublin on t
 
 ## Example 2
 
-	python travelingtp.py --visit_airports CPH,LHR,DUB,LAX,PEK,FRA,ORD,ATL --trip_time 250 --first_flight_date "2015.6.15"
+	python travelingtp.py CPH,LHR,DUB,LAX,PEK,FRA,ORD,ATL --trip_time 250 --first_flight_date "2015.6.15"
 	
 Output:
 
@@ -75,7 +75,7 @@ If I had time I'd probably invest it in adding the following features to my code
 * Add an option to choose cities rather than airports to visit and set the price value between airports in the same city as something specified (default 0).
 * Add an option to specify range in kilometers and make all airports in that range have a cost value of something specified (default 0).
 
-The code is written in a way that these features would be fairly simply to add to it. Just instead of starting with empty dicts I could make the dicts have the cost 0 before running the "findFlights" function, e.g.
+The code is written in a way that these features would be fairly simple to add to it. Just instead of starting with empty dicts I could make the dicts have the cost 0 before running the "findFlights" function, e.g.
 
 	d["LHR"]["LGW"][0] = 0
 
