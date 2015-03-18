@@ -40,7 +40,7 @@ However, which I later realized is that I cannot really apply this statement to 
 # My TTP program in action
 ## Prerequisites
 
-The code is written and tested on Python 2.7 on Ubundu 14.04 (Trusty Tahr). It should of course run on other platforms as well. No external modules were used.
+The code is written and tested on Python 2.7 on Ubundu 14.04 (Trusty Tahr). It should of course run on other platforms as well. The only external module used was [Requests](http://docs.python-requests.org/en/latest/).
 
 ## Help
 
