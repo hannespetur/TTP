@@ -165,7 +165,7 @@ if __name__ == '__main__':
 	n = len(airports_to_visit)
 
 	# k is the time (in days) we should stay at each place
-	k = int(round(total_trip_time/n - min_time_per_location*(n+1)))
+	k = int(round(total_trip_time/n - min_time_per_location))
 
 	delta_k = datetime.timedelta(days=k)
 	min_days_per_location = datetime.timedelta(days=min_time_per_location)
@@ -202,5 +202,8 @@ if __name__ == '__main__':
 	if(min_perm != []):
 		min_order += " --("+dlist[-1][min_perm[-1]][original_airport][1]+" for "+str(dlist[-1][min_perm[-1]][original_airport][0])+" "+currency+")--> "+original_airport
 
-	print min_order
-	print "Price:", min_price, currency
+	if (min_price != sys.maxint):
+		print min_order
+		print "Price:", min_price, currency
+	else:
+		print "No solution found! Sorry!"
